@@ -10,6 +10,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
       - name: Set up test environment
+        working-directory: test/unit
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -20,3 +21,4 @@ jobs:
           source venv/bin/activate
           PYTHONUNBUFFERED=true PYTHONPATH=../../source python -m unittest --verbose
 
+# TODO look advice on how to build and test python github actions (https://docs.github.com/en/actions)
